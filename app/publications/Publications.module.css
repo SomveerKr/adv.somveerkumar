@@ -1,0 +1,112 @@
+.content {
+    margin-top: var(--nav-height);
+}
+
+.pubSection {
+    background: var(--color-white);
+}
+
+.pubGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+}
+
+.pubCard {
+    background: var(--color-off-white);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    transition: all var(--transition-base);
+}
+
+.pubCard:hover {
+    border-color: var(--color-gold);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.pubMeta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+}
+
+.pubDate {
+    font-size: 0.78rem;
+    color: var(--color-gray-500);
+    font-weight: 600;
+}
+
+.pubTag {
+    font-size: 0.72rem;
+    background: rgba(44, 82, 130, 0.08);
+    color: var(--color-accent);
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.pubCard h3 {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-sm);
+    color: var(--color-navy);
+    line-height: 1.4;
+}
+
+.pubCard p {
+    font-size: 0.9rem;
+    color: var(--color-gray-600);
+    line-height: 1.65;
+}
+
+.pubReadMore {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    color: var(--color-accent);
+    font-weight: 600;
+    margin-top: var(--space-sm);
+    transition: gap var(--transition-fast);
+}
+
+.pubReadMore:hover {
+    gap: 10px;
+}
+
+.disclaimer {
+    background: var(--color-off-white);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg) var(--space-xl);
+    margin-bottom: var(--space-2xl);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+}
+
+.disclaimer svg {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    color: var(--color-gray-500);
+    margin-top: 2px;
+}
+
+.disclaimer p {
+    font-size: 0.88rem;
+    color: var(--color-gray-500);
+    font-style: italic;
+    margin: 0;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .pubGrid {
+        grid-template-columns: 1fr;
+    }
+}

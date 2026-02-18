@@ -1,0 +1,157 @@
+.content {
+    margin-top: var(--nav-height);
+}
+
+.bioSection {
+    background: var(--color-white);
+}
+
+.bioGrid {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: var(--space-3xl);
+    align-items: start;
+}
+
+.bioText p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--color-gray-600);
+}
+
+.bioText h3 {
+    margin-top: var(--space-2xl);
+    margin-bottom: var(--space-md);
+    font-size: 1.2rem;
+}
+
+.bioText ul {
+    padding-left: var(--space-lg);
+    color: var(--color-gray-600);
+}
+
+.bioText ul li {
+    margin-bottom: var(--space-sm);
+    line-height: 1.65;
+}
+
+/* Info card sidebar */
+.infoCard {
+    background: var(--color-off-white);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    position: sticky;
+    top: calc(var(--nav-height) + var(--space-xl));
+}
+
+.infoCard h4 {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--color-gray-500);
+    margin-bottom: var(--space-lg);
+    font-weight: 700;
+}
+
+.infoItem {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.infoItem:last-child {
+    border-bottom: none;
+}
+
+.infoLabel {
+    font-size: 0.78rem;
+    color: var(--color-gray-500);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.infoValue {
+    font-size: 0.95rem;
+    color: var(--color-navy);
+    font-weight: 600;
+}
+
+/* Timeline */
+.timeline {
+    background: var(--color-off-white);
+}
+
+.timelineList {
+    list-style: none;
+    padding: 0;
+    position: relative;
+}
+
+.timelineList::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-border);
+}
+
+.timelineItem {
+    position: relative;
+    padding-left: 48px;
+    padding-bottom: var(--space-2xl);
+}
+
+.timelineItem:last-child {
+    padding-bottom: 0;
+}
+
+.timelineDot {
+    position: absolute;
+    left: 8px;
+    top: 4px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--color-white);
+    border: 3px solid var(--color-gold);
+}
+
+.timelineYear {
+    font-size: 0.78rem;
+    color: var(--color-gold);
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.timelineTitle {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    color: var(--color-navy);
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.timelineDesc {
+    font-size: 0.9rem;
+    color: var(--color-gray-600);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .bioGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .infoCard {
+        position: static;
+    }
+}
