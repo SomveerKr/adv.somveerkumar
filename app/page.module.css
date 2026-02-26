@@ -245,8 +245,40 @@
 }
 
 @media (max-width: 992px) {
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding-top: var(--space-2xl);
+    padding-bottom: var(--space-2xl);
+  }
+
   .heroDecor {
-    display: none;
+    position: static;
+    transform: none;
+    width: 280px;
+    height: 280px;
+    margin: 0 auto var(--space-xl);
+    order: -1;
+  }
+
+  .heroDecor::before {
+    width: 250px;
+    height: 250px;
+  }
+
+  .heroImage {
+    width: 260px;
+    height: 260px;
+  }
+
+  .heroSubtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .heroMeta {
+    justify-content: center;
   }
 
   .introGrid {
@@ -271,6 +303,21 @@
     gap: var(--space-lg);
   }
 
+  .heroDecor {
+    width: 220px;
+    height: 220px;
+  }
+
+  .heroDecor::before {
+    width: 195px;
+    height: 195px;
+  }
+
+  .heroImage {
+    width: 200px;
+    height: 200px;
+  }
+
   .ctaInner {
     flex-direction: column;
     text-align: center;
@@ -280,5 +327,20 @@
 @media (max-width: 480px) {
   .heroTitle {
     font-size: 1.8rem;
+  }
+
+  .heroDecor {
+    width: 180px;
+    height: 180px;
+  }
+
+  .heroDecor::before {
+    width: 160px;
+    height: 160px;
+  }
+
+  .heroImage {
+    width: 165px;
+    height: 165px;
   }
 }
