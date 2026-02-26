@@ -247,6 +247,7 @@
 @media (max-width: 992px) {
   .hero {
     flex-direction: column;
+    align-items: center;
     justify-content: center;
     text-align: center;
     padding-top: var(--space-2xl);
@@ -256,10 +257,14 @@
   .heroDecor {
     position: relative;
     transform: none;
+    right: auto;
+    top: auto;
     width: 280px;
     height: 280px;
-    margin: 0 auto var(--space-xl);
+    margin-inline: auto;
+    margin-bottom: var(--space-xl);
     order: -1;
+    flex-shrink: 0;
   }
 
   .heroDecor::before {
