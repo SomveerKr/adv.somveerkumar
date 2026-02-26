@@ -28,10 +28,7 @@ export default function Home() {
           </p>
 
           <div className={styles.heroMeta}>
-            <div className={styles.heroMetaItem}>
-              <span className={styles.heroMetaLabel}>Jurisdiction</span>
-              <span className={styles.heroMetaValue}>Delhi High Court</span>
-            </div>
+
             <div className={styles.heroMetaItem}>
               <span className={styles.heroMetaLabel}>Enrollment</span>
               <span className={styles.heroMetaValue}>Bar Council of Delhi</span>
@@ -39,6 +36,10 @@ export default function Home() {
             <div className={styles.heroMetaItem}>
               <span className={styles.heroMetaLabel}>Focus Areas</span>
               <span className={styles.heroMetaValue}>Tech, IPR &amp; Corporate</span>
+            </div>
+            <div className={styles.heroMetaItem}>
+              <span className={styles.heroMetaLabel}>Other Skill</span>
+              <span className={styles.heroMetaValue}>Software Developer</span>
             </div>
           </div>
         </div>
