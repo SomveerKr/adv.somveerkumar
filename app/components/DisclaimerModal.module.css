@@ -26,6 +26,8 @@
     border-radius: var(--radius-lg);
     max-width: 580px;
     width: 100%;
+    max-height: calc(100dvh - 2rem);
+    overflow-y: auto;
     padding: var(--space-2xl) var(--space-2xl) var(--space-xl);
     box-shadow: var(--shadow-xl);
     animation: slideUp 0.4s ease;
@@ -128,8 +130,13 @@
 }
 
 @media (max-width: 480px) {
+    .overlay {
+        padding: var(--space-sm);
+    }
+
     .modal {
-        padding: var(--space-xl) var(--space-lg) var(--space-lg);
+        padding: var(--space-lg) var(--space-md) var(--space-md);
+        max-height: calc(100dvh - 1rem);
     }
 
     .title {
