@@ -13,7 +13,7 @@
   inset: 0;
   opacity: 0.02;
   background-image: url('/sk-golden-logo.svg');
-  background-size: 200px 200px;
+  background-size: 160px 160px;
   margin: 20px;
   background-repeat: repeat;
   z-index: 0;
@@ -151,9 +151,9 @@
 .introPattern {
   position: absolute;
   inset: 0;
-  opacity: 0.03;
+  opacity: 0.02;
   background-image: url('/sk-navy-blue-logo.svg');
-  background-size: 200px 200px;
+  background-size: 160px 160px;
   background-repeat: repeat;
   z-index: 0;
 }
