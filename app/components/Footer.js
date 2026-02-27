@@ -6,6 +6,7 @@ export default function Footer() {
 
     return (
         <footer className={styles.footer}>
+            <div className={styles.footerPattern}></div>
             <div className="container">
                 <div className={styles.footerTop}>
                     <div className={styles.footerBrand}>
