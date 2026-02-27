@@ -122,13 +122,15 @@
 }
 
 .heroDecor::after {
-  content: '⚖';
+  content: '';
   position: absolute;
   bottom: 8px;
-  right: 8px;
-  font-size: 3.5rem;
-  opacity: 0.25;
-  color: var(--color-gold);
+  right: -8px;
+  width: 10rem;
+  height: 10rem;
+  background: url('/sk-golden-logo.svg') no-repeat center / contain;
+  /* opacity: 0.25; */
+  z-index: 1;
 }
 
 .heroImage {
@@ -289,7 +291,8 @@
   .heroDecor::after {
     bottom: 0px;
     right: 0px;
-    font-size: 3rem;
+    width: 3rem;
+    height: 3rem;
   }
 
   .heroImage {
@@ -341,7 +344,8 @@
   .heroDecor::after {
     bottom: -8px;
     right: -8px;
-    font-size: 2.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
   }
 
   .heroImage {
@@ -373,7 +377,8 @@
   .heroDecor::after {
     bottom: -8px;
     right: -8px;
-    font-size: 2rem;
+    width: 2rem;
+    height: 2rem;
   }
 
   .heroImage {
