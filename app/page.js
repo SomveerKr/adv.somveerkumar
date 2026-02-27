@@ -58,6 +58,7 @@ export default function Home() {
 
       {/* Intro Cards */}
       <section className={`section ${styles.intro}`}>
+        <div className={styles.introPattern}></div>
         <div className="container">
           <h2 className="section-title">Areas of Focus</h2>
           <p className="section-subtitle">
@@ -114,6 +115,7 @@ export default function Home() {
 
       {/* CTA Banner */}
       <section className={`section ${styles.ctaBanner}`}>
+
         <div className="container">
           <div className={styles.ctaInner}>
             <div className={styles.ctaText}>
