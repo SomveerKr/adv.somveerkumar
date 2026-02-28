@@ -1,4 +1,5 @@
 import styles from './About.module.css';
+import PatternBackground from '../components/PatternBackground';
 
 export const metadata = {
     title: 'About | Somveer Kumar — Legal Consultant',
@@ -10,6 +11,7 @@ export default function AboutPage() {
         <div className={styles.content}>
             {/* Page Header */}
             <div className="page-header">
+                <PatternBackground src="/sk-golden-logo.svg" />
                 <div className="container">
                     <p className="breadcrumb">About</p>
                     <h1>Professional Profile</h1>
@@ -19,6 +21,7 @@ export default function AboutPage() {
 
             {/* Bio Section */}
             <section className={`section ${styles.bioSection}`}>
+                <PatternBackground src="/sk-navy-blue-logo.svg" />
                 <div className="container">
                     <div className={styles.bioGrid}>
                         <div className={styles.bioText}>

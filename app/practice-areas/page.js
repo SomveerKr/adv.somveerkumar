@@ -1,5 +1,5 @@
 import styles from './PracticeAreas.module.css';
-
+import PatternBackground from '../components/PatternBackground';
 export const metadata = {
     title: 'Practice Areas | Somveer Kumar — Technology, IPR & Corporate Law',
     description: 'Areas of legal practice including Technology & Data Protection Law, Commercial Transactions, Corporate Compliance, and Intellectual Property Rights.',
@@ -63,6 +63,7 @@ export default function PracticeAreasPage() {
         <div className={styles.content}>
             {/* Page Header */}
             <div className="page-header">
+                <PatternBackground src="/sk-golden-logo.svg" />
                 <div className="container">
                     <p className="breadcrumb">Practice Areas</p>
                     <h1>Areas of Practice</h1>
@@ -72,6 +73,7 @@ export default function PracticeAreasPage() {
 
             {/* Areas Grid */}
             <section className={`section ${styles.areasSection}`}>
+                <PatternBackground src="/sk-navy-blue-logo.svg" />
                 <div className="container">
                     <div className={styles.areasGrid}>
                         {practiceAreas.map((area, index) => (

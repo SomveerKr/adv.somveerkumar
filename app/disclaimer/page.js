@@ -1,4 +1,5 @@
 import styles from '../LegalPage.module.css';
+import PatternBackground from '../components/PatternBackground';
 
 export const metadata = {
     title: 'Disclaimer | Somveer Kumar',
@@ -10,6 +11,7 @@ export default function DisclaimerPage() {
         <div className={styles.content}>
             {/* Page Header */}
             <div className="page-header">
+                <PatternBackground src="/sk-golden-logo.svg" />
                 <div className="container">
                     <p className="breadcrumb">Legal</p>
                     <h1>Disclaimer</h1>
@@ -18,6 +20,7 @@ export default function DisclaimerPage() {
             </div>
 
             <section className={`section ${styles.legalSection}`}>
+                <PatternBackground src="/sk-navy-blue-logo.svg" />
                 <div className="container">
                     <div className={styles.legalContent}>
                         <h2>Bar Council of India Compliance</h2>

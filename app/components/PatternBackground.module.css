@@ -4,3 +4,8 @@
     background-repeat: repeat;
     z-index: 0;
 }
+
+:has(> .pattern) {
+    position: relative;
+    overflow: hidden;
+}

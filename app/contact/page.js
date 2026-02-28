@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import styles from './Contact.module.css';
+import PatternBackground from '../components/PatternBackground';
 
 export default function ContactPage() {
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -18,8 +19,10 @@ export default function ContactPage() {
 
     return (
         <div className={styles.content}>
+
             {/* Page Header */}
             <div className="page-header">
+                <PatternBackground src="/sk-golden-logo.svg" />
                 <div className="container">
                     <p className="breadcrumb">Contact</p>
                     <h1>Professional Correspondence</h1>
@@ -29,6 +32,7 @@ export default function ContactPage() {
 
             {/* Contact Form Section */}
             <section className={`section ${styles.contactSection}`}>
+                <PatternBackground src="/sk-navy-blue-logo.svg" />
                 <div className="container">
                     <div className={styles.contactGrid}>
                         {/* Form */}

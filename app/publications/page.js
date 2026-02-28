@@ -1,4 +1,5 @@
 import styles from './Publications.module.css';
+import PatternBackground from '../components/PatternBackground';
 
 export const metadata = {
     title: 'Publications | Somveer Kumar — Legal Insights & Research',
@@ -55,6 +56,7 @@ export default function PublicationsPage() {
         <div className={styles.content}>
             {/* Page Header */}
             <div className="page-header">
+                <PatternBackground src="/sk-golden-logo.svg" />
                 <div className="container">
                     <p className="breadcrumb">Publications</p>
                     <h1>Publications &amp; Legal Insights</h1>
@@ -64,6 +66,7 @@ export default function PublicationsPage() {
 
             {/* Publications */}
             <section className={`section ${styles.pubSection}`}>
+                <PatternBackground src="/sk-navy-blue-logo.svg" />
                 <div className="container">
                     {/* Disclaimer */}
                     <div className={styles.disclaimer}>
