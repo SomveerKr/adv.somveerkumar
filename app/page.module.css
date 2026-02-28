@@ -11,7 +11,7 @@
 .heroPattern {
   position: absolute;
   inset: 0;
-  opacity: 0.02;
+  opacity: 0.03;
   background-image: url('/sk-golden-logo.svg');
   background-size: 160px 160px;
   margin: 20px;
@@ -153,7 +153,7 @@
 .introPattern {
   position: absolute;
   inset: 0;
-  opacity: 0.02;
+  opacity: 0.03;
   background-image: url('/sk-navy-blue-logo.svg');
   background-size: 160px 160px;
   background-repeat: repeat;
