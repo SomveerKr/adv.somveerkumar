@@ -29,6 +29,14 @@
   margin-bottom: var(--space-xl);
 }
 
+.badgeTextFull {
+  display: inline;
+}
+
+.badgeTextShort {
+  display: none;
+}
+
 .heroBadge svg {
   width: 14px;
   height: 14px;
@@ -339,6 +347,14 @@
 }
 
 @media (max-width: 480px) {
+  .badgeTextFull {
+    display: none;
+  }
+
+  .badgeTextShort {
+    display: inline;
+  }
+
   .heroTitle {
     font-size: 1.8rem;
   }
