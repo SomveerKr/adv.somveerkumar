@@ -6,15 +6,6 @@
     overflow: hidden;
 }
 
-.footerPattern {
-    position: absolute;
-    inset: 0;
-    opacity: 0.03;
-    background-image: url('/sk-golden-logo.svg');
-    background-size: 160px 160px;
-    background-repeat: repeat;
-    z-index: 0;
-}
 
 .footer :global(.container) {
     position: relative;

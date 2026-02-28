@@ -1,0 +1,6 @@
+.pattern {
+    position: absolute;
+    inset: 0;
+    background-repeat: repeat;
+    z-index: 0;
+}

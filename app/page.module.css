@@ -8,17 +8,6 @@
   margin-top: var(--nav-height);
 }
 
-.heroPattern {
-  position: absolute;
-  inset: 0;
-  opacity: 0.03;
-  background-image: url('/sk-golden-logo.svg');
-  background-size: 160px 160px;
-  margin: 20px;
-  background-repeat: repeat;
-  z-index: 0;
-}
-
 .heroContent {
   position: relative;
   z-index: 1;
@@ -148,16 +137,6 @@
   position: relative;
   background: var(--color-white);
   overflow: hidden;
-}
-
-.introPattern {
-  position: absolute;
-  inset: 0;
-  opacity: 0.03;
-  background-image: url('/sk-navy-blue-logo.svg');
-  background-size: 160px 160px;
-  background-repeat: repeat;
-  z-index: 0;
 }
 
 .intro :global(.container) {

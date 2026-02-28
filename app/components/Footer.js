@@ -1,12 +1,13 @@
 import Link from 'next/link';
 import styles from './Footer.module.css';
+import PatternBackground from './PatternBackground';
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
         <footer className={styles.footer}>
-            <div className={styles.footerPattern}></div>
+            <PatternBackground src="/sk-golden-logo.svg" />
             <div className="container">
                 <div className={styles.footerTop}>
                     <div className={styles.footerBrand}>

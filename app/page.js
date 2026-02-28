@@ -1,13 +1,14 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './page.module.css';
+import PatternBackground from './components/PatternBackground';
 
 export default function Home() {
   return (
     <>
       {/* Hero Section */}
       <section className={styles.hero}>
-        <div className={styles.heroPattern}></div>
+        <PatternBackground src="/sk-golden-logo.svg" />
         <div className={`container ${styles.heroContent}`}>
           <div className={styles.heroBadge}>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -58,7 +59,7 @@ export default function Home() {
 
       {/* Intro Cards */}
       <section className={`section ${styles.intro}`}>
-        <div className={styles.introPattern}></div>
+        <PatternBackground src="/sk-navy-blue-logo.svg" />
         <div className="container">
           <h2 className="section-title">Areas of Focus</h2>
           <p className="section-subtitle">
