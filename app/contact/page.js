@@ -199,7 +199,7 @@ export default function ContactPage() {
                                     </svg>
                                     <div>
                                         <span className={styles.label}>Email</span>
-                                        <span className={styles.value}>contact@example.com</span>
+                                        <span className={styles.value}><a href='mailto:work.somveerk@gmail.com' >work.somveerk@gmail.com</a></span>
                                     </div>
                                 </div>
 
