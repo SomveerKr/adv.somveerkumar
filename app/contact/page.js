@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaLinkedin } from 'react-icons/fa';
 import styles from './Contact.module.css';
 import PatternBackground from '../components/PatternBackground';
 
@@ -179,12 +180,9 @@ export default function ContactPage() {
                                 <h3>Office Information</h3>
 
                                 <div className={styles.infoBlockItem}>
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                                        <circle cx="12" cy="10" r="3" />
-                                    </svg>
+                                    <FaMapMarkerAlt />
                                     <div>
-                                        <span className={styles.label}>Address</span>
+                                        <span className={styles.label}>Address </span>
                                         <span className={styles.value}>
                                             Chamber No. [XX], [Building Name],<br />
                                             New Delhi — 110001, India
@@ -193,25 +191,18 @@ export default function ContactPage() {
                                 </div>
 
                                 <div className={styles.infoBlockItem}>
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                                        <polyline points="22,6 12,13 2,6" />
-                                    </svg>
+                                    <FaEnvelope />
                                     <div>
-                                        <span className={styles.label}>Email</span>
+                                        <span className={styles.label}>Email </span>
                                         <span className={styles.value}><a href='mailto:work.somveerk@gmail.com' >work.somveerk@gmail.com</a></span>
                                     </div>
                                 </div>
 
                                 <div className={styles.infoBlockItem}>
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                                        <rect x="2" y="9" width="4" height="12" />
-                                        <circle cx="4" cy="4" r="2" />
-                                    </svg>
+                                    <FaLinkedin />
                                     <div>
-                                        <span className={styles.label}>LinkedIn</span>
-                                        <span className={styles.value}>linkedin.com/in/advocate-name</span>
+                                        <span className={styles.label}>LinkedIn </span>
+                                        <span className={styles.value}><a href='https://www.linkedin.com/in/somveerkumar/' target="_blank">linkedin.com/in/somveerkumar</a></span>
                                     </div>
                                 </div>
                             </div>
