@@ -119,12 +119,6 @@
     margin-bottom: var(--space-lg);
 }
 
-.errorMsg svg {
-    flex-shrink: 0;
-    width: 18px;
-    height: 18px;
-    margin-top: 1px;
-}
 
 /* Info sidebar */
 .infoSidebar {
@@ -163,13 +157,6 @@
     padding-bottom: 0;
 }
 
-.infoBlockItem svg {
-    flex-shrink: 0;
-    width: 18px;
-    height: 18px;
-    color: var(--color-accent);
-    margin-top: 2px;
-}
 
 .infoBlockItem .label {
     font-size: 0.78rem;
