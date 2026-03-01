@@ -6,7 +6,7 @@ import styles from './Contact.module.css';
 import PatternBackground from '../components/PatternBackground';
 
 export default function ContactPage() {
-    const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+    const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
     const [status, setStatus] = useState('idle'); // idle | submitting | success | error
     const [errorMessage, setErrorMessage] = useState('');
 
@@ -29,6 +29,7 @@ export default function ContactPage() {
                     from_name: formData.name,
                     name: formData.name,
                     email: formData.email,
+                    phone: formData.phone || 'Not provided',
                     message: formData.message,
                     botcheck: '', // honeypot — bots fill this, humans don't
                 }),
@@ -38,7 +39,7 @@ export default function ContactPage() {
 
             if (result.success) {
                 setStatus('success');
-                setFormData({ name: '', email: '', message: '' });
+                setFormData({ name: '', email: '', phone: '', message: '' });
             } else {
                 setStatus('error');
                 setErrorMessage(result.message || 'Something went wrong. Please try again.');
@@ -128,6 +129,20 @@ export default function ContactPage() {
                                             placeholder="your.email@example.com"
                                             required
                                             autoComplete="email"
+                                            disabled={status === 'submitting'}
+                                        />
+                                    </div>
+
+                                    <div className={styles.formGroup}>
+                                        <label htmlFor="phone">Phone Number <span style={{ fontWeight: 400, color: 'var(--color-gray-600)', fontSize: '0.85em' }}>(Optional)</span></label>
+                                        <input
+                                            type="tel"
+                                            id="phone"
+                                            name="phone"
+                                            value={formData.phone}
+                                            onChange={handleChange}
+                                            placeholder="+91 XXXXX XXXXX"
+                                            autoComplete="tel"
                                             disabled={status === 'submitting'}
                                         />
                                     </div>
