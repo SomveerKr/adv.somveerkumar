@@ -6,15 +6,46 @@ import PatternBackground from '../components/PatternBackground';
 
 export default function ContactPage() {
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-    const [submitted, setSubmitted] = useState(false);
+    const [status, setStatus] = useState('idle'); // idle | submitting | success | error
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        setSubmitted(true);
+        setStatus('submitting');
+        setErrorMessage('');
+
+        try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    access_key: process.env.NEXT_PUBLIC_W3F_ACCESS_KEY,
+                    subject: `New message from ${formData.name} — adv.somveerkumar`,
+                    from_name: formData.name,
+                    name: formData.name,
+                    email: formData.email,
+                    message: formData.message,
+                    botcheck: '', // honeypot — bots fill this, humans don't
+                }),
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                setStatus('success');
+                setFormData({ name: '', email: '', message: '' });
+            } else {
+                setStatus('error');
+                setErrorMessage(result.message || 'Something went wrong. Please try again.');
+            }
+        } catch {
+            setStatus('error');
+            setErrorMessage('Unable to send your message. Please check your internet connection and try again.');
+        }
     };
 
     return (
@@ -43,16 +74,33 @@ export default function ContactPage() {
                                 Please provide relevant details for your inquiry.
                             </p>
 
-                            {submitted ? (
+                            {status === 'success' ? (
                                 <div style={{ padding: '2rem', background: 'var(--color-off-white)', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-border-light)' }}>
-                                    <h3 style={{ color: 'var(--color-navy)', marginBottom: '0.5rem' }}>Message Received</h3>
+                                    <h3 style={{ color: 'var(--color-navy)', marginBottom: '0.5rem' }}>Message Sent Successfully</h3>
                                     <p style={{ color: 'var(--color-gray-600)', fontSize: '0.95rem' }}>
-                                        Thank you for your correspondence. Your message has been noted
+                                        Thank you for your correspondence. Your message has been delivered
                                         and a response will be provided at the earliest convenience.
                                     </p>
+                                    <button
+                                        type="button"
+                                        onClick={() => setStatus('idle')}
+                                        className={styles.submitBtn}
+                                        style={{ marginTop: '1.5rem' }}
+                                    >
+                                        Send Another Message
+                                    </button>
                                 </div>
                             ) : (
                                 <form onSubmit={handleSubmit}>
+                                    {/* Honeypot field — invisible to users, catches bots */}
+                                    <input
+                                        type="checkbox"
+                                        name="botcheck"
+                                        style={{ display: 'none' }}
+                                        tabIndex={-1}
+                                        autoComplete="off"
+                                    />
+
                                     <div className={styles.formGroup}>
                                         <label htmlFor="name">Full Name</label>
                                         <input
@@ -64,6 +112,7 @@ export default function ContactPage() {
                                             placeholder="Your full name"
                                             required
                                             autoComplete="name"
+                                            disabled={status === 'submitting'}
                                         />
                                     </div>
 
@@ -78,6 +127,7 @@ export default function ContactPage() {
                                             placeholder="your.email@example.com"
                                             required
                                             autoComplete="email"
+                                            disabled={status === 'submitting'}
                                         />
                                     </div>
 
@@ -90,11 +140,34 @@ export default function ContactPage() {
                                             onChange={handleChange}
                                             placeholder="Please describe your inquiry..."
                                             required
+                                            disabled={status === 'submitting'}
                                         ></textarea>
                                     </div>
 
-                                    <button type="submit" className={styles.submitBtn}>
-                                        Send Message
+                                    {status === 'error' && (
+                                        <div className={styles.errorMsg}>
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                <circle cx="12" cy="12" r="10" />
+                                                <line x1="12" y1="8" x2="12" y2="12" />
+                                                <line x1="12" y1="16" x2="12.01" y2="16" />
+                                            </svg>
+                                            <span>{errorMessage}</span>
+                                        </div>
+                                    )}
+
+                                    <button
+                                        type="submit"
+                                        className={styles.submitBtn}
+                                        disabled={status === 'submitting'}
+                                    >
+                                        {status === 'submitting' ? (
+                                            <>
+                                                <span className={styles.spinner}></span>
+                                                Sending…
+                                            </>
+                                        ) : (
+                                            'Send Message'
+                                        )}
                                     </button>
                                 </form>
                             )}
